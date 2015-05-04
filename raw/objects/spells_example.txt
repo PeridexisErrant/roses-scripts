@@ -1,0 +1,11 @@
+
+[SPELL:SPELL_TEST_1]
+ [CDI:INTERACTION:TEST_1]
+blah
+blah
+blah
+
+[SPELL:SPELL_TEST_2]
+blah
+blah
+blah
