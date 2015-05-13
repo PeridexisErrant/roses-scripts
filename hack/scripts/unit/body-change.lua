@@ -161,5 +161,5 @@ if dur > 0 then
  else
   script = script..' [ '..table.unpack(tokens)..' ] '
  end
- dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+ dfhack.script_environment('persist-delay').persistentDelay(dur,script)
 end

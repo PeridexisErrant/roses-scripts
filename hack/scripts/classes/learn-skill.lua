@@ -56,7 +56,7 @@ dfhack.script_environment('classes/establish-class').establishClass(unit)
 if args.override then
  yes = true
 else
- yes,upgrade = yes = dfhack.script_environment('classes/requirements-spell').checkSpell(unit,args.spell,verbose)
+ yes,upgrade = dfhack.script_environment('classes/requirements-spell').checkSpell(unit,args.spell,verbose)
 end
 if yes then 
  success = learnspell(unit,args.spell,upgrade,verbose)

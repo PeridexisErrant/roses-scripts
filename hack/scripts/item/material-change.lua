@@ -30,7 +30,7 @@ function imbueinventory(v,mat,dur)
 
   if dur ~= 0 then
    script = 'item/material-change -item '..tostring(sitem.id)..' -mat '..dfhack.matinfo.getToken(stype,sindex)
-   dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+   dfhack.script_environment('persist-delay').persistentDelay(dur,script)
   end
  end
 end
@@ -47,7 +47,7 @@ function imbueitem(item,mat,dur)
 
  if dur ~= 0 then
   script = 'item/material-change -item '..tostring(sitem.id)..' -mat '..dfhack.matinfo.getToken(stype,sindex)
-  dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+  dfhack.script_environment('persist-delay').persistentDelay(dur,script)
  end
 end
 
@@ -134,7 +134,7 @@ if args.armor then imbueinventory(df.item_armorst,mat,dur) end
 if args.helm then imbueinventory(df.item_helmst,mat,dur) end
 if args.shoes then imbueinventory(df.item_shoesst,mat,dur) end
 if args.shield then imbueinventory(df.item_shieldst,mat,dur) end
-if args.gloves then imbueinventory(df.item_glovest,mat,dur) end
+if args.gloves then imbueinventory(df.item_glovesst,mat,dur) end
 if args.pants then imbueinventory(df.item_pantsst,mat,dur) end
 if args.ammo then imbueinventory(df.item_ammost,mat,dur) end
 if args.item then imbueitem(item,mat,dur) end

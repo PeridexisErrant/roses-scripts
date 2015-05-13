@@ -160,7 +160,7 @@ for i,etype in ipairs(token) do -- !!RUN EFFECT!!
  change = effect(etype,unit,mode,tonumber(value[i]))
  if dur > 0 then
   script = 'unit/skill-change -unit '..tostring(unit.id)..' -fixed \\'..tostring(change)..' -skill '..etype
-  dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+  dfhack.script_environment('persist-delay').persistentDelay(dur,script)
  end
 end
 if args.announcement then

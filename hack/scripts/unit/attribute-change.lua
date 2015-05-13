@@ -142,7 +142,7 @@ for i,etype in ipairs(token) do
  change = effect(etype,mental,unit,mode,tonumber(value[i]),dur)
  if dur > 0 then
   script = 'unit/attribute-change -unit '..tostring(unit.id)..' -fixed \\'..tostring(change)..' -'..mental..' '..etype
-  dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+  dfhack.script_environment('persist-delay').persistentDelay(dur,script)
  end
 end
 if args.announcement then

@@ -11,7 +11,7 @@ function itemSubtypes(item) -- Taken from Putnam's itemSyndrome
     HELM = df.item_helmst,
     SHOES = df.item_shoesst,
     SHIELD = df.item_shieldst,
-    GLOVES = df.item_glovest,
+    GLOVES = df.item_glovesst,
     PANTS = df.item_pantsst,
     TOOL = df.item_toolst,
     SIEGEAMMO = df.item_siegeammost,
@@ -80,7 +80,7 @@ function upgradeitem(args,v,dur,subtype)
     item_sub = dfhack.items.getSubtypeDef(item_index,i)
     if item_sub.id == name then x:setSubtype(item_sub.subtype) end
    end
-   if dur > 0 then dfhack.script_environment('persist-delay').persistantDelay(dur,'item/subtype-change -item '..tostring(x.id)..' -downgrade') end
+   if dur > 0 then dfhack.script_environment('persist-delay').persistentDelay(dur,'item/subtype-change -item '..tostring(x.id)..' -downgrade') end
   end
  elseif args.downgrade then
 -- Decrease items number by one
@@ -96,7 +96,7 @@ function upgradeitem(args,v,dur,subtype)
     item_sub = dfhack.items.getSubtypeDef(item_index,i)
     if item_sub.id == name then x:setSubtype(item_sub.subtype) end
    end
-   if dur > 0 then dfhack.script_environment('persist-delay').persistantDelay(dur,'item/subtype-change -item '..tostring(x.id)..' -upgrade') end
+   if dur > 0 then dfhack.script_environment('persist-delay').persistentDelay(dur,'item/subtype-change -item '..tostring(x.id)..' -upgrade') end
   end
  else
 -- Change item to new item
@@ -110,7 +110,7 @@ function upgradeitem(args,v,dur,subtype)
 	 x:setSubtype(item_sub.subtype)
 	end
    end
-   if dur > 0 then dfhack.script_environment('persist-delay').persistantDelay(dur,'item/subtype-change -item '..tostring(x.id)..' -type '..tostring(sid)) end
+   if dur > 0 then dfhack.script_environment('persist-delay').persistentDelay(dur,'item/subtype-change -item '..tostring(x.id)..' -type '..tostring(sid)) end
   end
  end
 end
@@ -195,7 +195,7 @@ if args.armor then upgradeitem(args,df.item_armorst,dur,args.armor) end
 if args.helm then upgradeitem(args,df.item_helmst,dur,args.helm) end
 if args.shoes then upgradeitem(args,df.item_shoesst,dur,args.shoes) end
 if args.shield then upgradeitem(args,df.item_shieldst,dur,args.shield) end
-if args.gloves then upgradeitem(args,df.item_glovest,dur,args.gloves) end
+if args.gloves then upgradeitem(args,df.item_glovesst,dur,args.gloves) end
 if args.pants then upgradeitem(args,df.item_pantsst,dur,args.pants) end
 if args.ammo then upgradeitem(args,df.item_ammost,dur,args.ammo) end
 if args.item then upgradeitem(args,0,dur,0) end

@@ -25,7 +25,7 @@ local function changeBuilding(bldg,items,subtype,dur,direction)
 	if direction == 1 then script = script..' -remove' end
 	if direction == -1 then script = script..' -add' end
    end   
-   dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+   dfhack.script_environment('persist-delay').persistentDelay(dur,script)
   end
  elseif subtype == 'downgrade' then
 -- Decrease buildings number by one
@@ -50,7 +50,7 @@ local function changeBuilding(bldg,items,subtype,dur,direction)
 	if direction == 1 then script = script..' -remove' end
 	if direction == -1 then script = script..' -add' end
    end   
-   dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+   dfhack.script_environment('persist-delay').persistentDelay(dur,script)
   end
  else
 -- Change building to new building
@@ -71,7 +71,7 @@ local function changeBuilding(bldg,items,subtype,dur,direction)
 	if direction == 1 then script = script..' -remove' end
 	if direction == -1 then script = script..' -add' end
    end   
-   dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+   dfhack.script_environment('persist-delay').persistentDelay(dur,script)
   end
  end
 

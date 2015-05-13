@@ -123,9 +123,9 @@ end
 
 if dur > 0 then
  script = 'item/remove -item '..tostring(item1.id)
- dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+ dfhack.script_environment('persist-delay').persistentDelay(dur,script)
  if item2 then
   script = 'item/remove -item '..tostring(item2.id)
-  dfhack.script_environment('persist-delay').persistantDelay(dur,script)
+  dfhack.script_environment('persist-delay').persistentDelay(dur,script)
  end
 end

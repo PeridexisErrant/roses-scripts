@@ -1,4 +1,4 @@
-function persistantDelay(ticks,script)
+function persistentDelay(ticks,script)
  local persistTable = require 'persist-table'
  local currentTick = 1200*28*3*4*df.global.cur_year + df.global.cur_year_tick
  local runTick = currentTick + ticks

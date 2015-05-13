@@ -60,7 +60,7 @@ function weather(stype,number,itype,strength,frequency,duration)
    script = 'special/customweather -flow '..stype..' -number '..tostring(number)..' -frequency '..tostring(frequency)..' -size '..tostring(strength)
    script = script..' -dur '..tostring(duration-frequency)
    if itype ~= 0 then script = script..' -inorganic '..itype end
-   dfhack.script_environment('persist-delay').persistantDelay(frequency,script)
+   dfhack.script_environment('persist-delay').persistentDelay(frequency,script)
   end
  end
 

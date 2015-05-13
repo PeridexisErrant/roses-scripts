@@ -112,7 +112,7 @@ if dfhack.script_environment('events/requirements-check').checkRequirements(even
     if delay == 0 then
      dfhack.run_command(script)
     else
-	 dfhack.script_environment('persist_delay').persistantDelay(delay,table.unpack(script))
+	 dfhack.script_environment('persist_delay').persistentDelay(delay,table.unpack(script))
     end
    end
   end

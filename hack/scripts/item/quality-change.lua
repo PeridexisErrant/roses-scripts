@@ -44,20 +44,20 @@ function upgradeitem(args,v,unit,dur,subtype)
 -- Increase items number by one
   for _,x in ipairs(sitems) do
    x:setQuality(sid+1)
-   if dur > 0 then dfhack.script_environment('persist-delay').persistantDelay(dur,'item/quality-change -item '..tostring(x.id)..' -downgrade') end
+   if dur > 0 then dfhack.script_environment('persist-delay').persistentDelay(dur,'item/quality-change -item '..tostring(x.id)..' -downgrade') end
   end
  elseif args.downgrade then
 -- Decrease items number by one
   for _,x in ipairs(sitems) do
    x:setQuality(sid-1)
-   if dur > 0 then dfhack.script_environment('persist-delay').persistantDelay(dur,'item/quality-change -item '..tostring(x.id)..' -upgrade') end
+   if dur > 0 then dfhack.script_environment('persist-delay').persistentDelay(dur,'item/quality-change -item '..tostring(x.id)..' -upgrade') end
   end
  else
 -- Change item to new quality
   for _,x in ipairs(sitems) do
    sid = x.quality
    x:setQuality(tonumber(args.quality))
-   if dur > 0 then dfhack.script_environment('persist-delay').persistantDelay(dur,'item/quality-change -item '..tostring(x.id)..' -quality '..tostring(sid)) end
+   if dur > 0 then dfhack.script_environment('persist-delay').persistentDelay(dur,'item/quality-change -item '..tostring(x.id)..' -quality '..tostring(sid)) end
   end
  end
 end
@@ -140,7 +140,7 @@ if args.armor then upgradeitem(args,df.item_armorst,unit,dur,args.armor) end
 if args.helm then upgradeitem(args,df.item_helmst,unit,dur,args.helm) end
 if args.shoes then upgradeitem(args,df.item_shoesst,unit,dur,args.shoes) end
 if args.shield then upgradeitem(args,df.item_shieldst,unit,dur,args.shield) end
-if args.gloves then upgradeitem(args,df.item_glovest,unit,dur,args.gloves) end
+if args.gloves then upgradeitem(args,df.item_glovesst,unit,dur,args.gloves) end
 if args.pants then upgradeitem(args,df.item_pantsst,unit,dur,args.pants) end
 if args.ammo then upgradeitem(args,df.item_ammost,unit,dur,args.ammo) end
 if args.item then upgradeitem(args,0,0,dur,0) end
