@@ -90,7 +90,7 @@ if add then
        local z = y['AllowedClass'][k]
        pos.rejected_class:insert('#',z)
       end
-      if y['Name'] then 
+      if y['Name'] then
        pos.name[0] = split(y['Name'],':')[1]
        pos.name[1] = split(y['Name'],':')[2]
        pos.name_female[0] = ''
@@ -109,11 +109,11 @@ if add then
        pos.name_female[0] = split(y['NameFemale'],':')[1]
        pos.name_female[1] = split(y['NameFemale'],':')[2]
       end
-      if y['NameMale'] then 
+      if y['NameMale'] then
        pos.name_male[0] = split(y['NameMale'],':')[1]
        pos.name_male[1] = split(y['NameMale'],':')[2]
       end
-      if y['Spouse'] then 
+      if y['Spouse'] then
        pos.spouse[0] = split(y['Spouse'],':')[1]
        pos.spouse[1] = split(y['Spouse'],':')[2]
        pos.spouse_female[0] = ''
@@ -132,7 +132,7 @@ if add then
        pos.spouse_female[0] = split(y['SpouseFemale'],':')[1]
        pos.spouse_female[1] = split(y['SpouseFemale'],':')[2]
       end
-      if y['SpouseMale'] then 
+      if y['SpouseMale'] then
        pos.spouse_male[0] = split(y['SpouseMale'],':')[1]
        pos.spouse_male[1] = split(y['SpouseMale'],':')[2]
       end
@@ -258,7 +258,7 @@ if add then
        end
        if p == -1 then
         for s,t in pairs(positions.site) do
-         if v == t.code then 
+         if v == t.code then
           p = t.id
           site = true
           break
@@ -267,7 +267,7 @@ if add then
        end
        if p == -1 then
         for s,t in pairs(positions.conquered_site) do
-         if v == t.code then 
+         if v == t.code then
           p = t.id
           break
          end
@@ -295,7 +295,7 @@ if add then
        end
        if p == -1 then
         for s,t in pairs(positions.site) do
-         if v == t.code then 
+         if v == t.code then
           p = t.id
           site = true
           break
@@ -304,7 +304,7 @@ if add then
        end
        if p == -1 then
         for s,t in pairs(positions.conquered_site) do
-         if v == t.code then 
+         if v == t.code then
           p = t.id
           break
          end
@@ -333,7 +333,7 @@ if add then
        end
        if p == -1 then
         for s,t in pairs(positions.site) do
-         if v == t.code then 
+         if v == t.code then
           p = t.id
           site = true
           break
@@ -342,7 +342,7 @@ if add then
        end
        if p == -1 then
         for s,t in pairs(positions.conquered_site) do
-         if v == t.code then 
+         if v == t.code then
           p = t.id
           break
          end

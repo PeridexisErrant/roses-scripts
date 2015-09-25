@@ -102,6 +102,7 @@ local function checkBuildings()
     return
    else
     return
+   end
   else
    table.insert(toDestroy,building)
   end

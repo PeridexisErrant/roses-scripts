@@ -102,12 +102,12 @@ if dfhack.script_environment('events/requirements-check').checkRequirements(even
    end
    for j = 1,scripts,1 do
     script = effect.Script[tostring(j)]
-    script = script:gsub('%\UNIT',tostring(unit.id))
-    script = script:gsub('%\LOCATION',location)
-    script = script:gsub('%\BUILDING',tostring(building.id))
-    script = script:gsub('%\ITEM',tostring(item.id))
+    script = script:gsub('%\\UNIT',tostring(unit.id))
+    script = script:gsub('%\\LOCATION',location)
+    script = script:gsub('%\\BUILDING',tostring(building.id))
+    script = script:gsub('%\\ITEM',tostring(item.id))
     for k = 1,number,1 do
-     script = script:gsub('\!ARG_'..tostring(k),tostring(arg[k]))
+     script = script:gsub('\\!ARG_'..tostring(k),tostring(arg[k]))
     end
     if delay == 0 then
      dfhack.run_command(script)

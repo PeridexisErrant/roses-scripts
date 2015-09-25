@@ -209,6 +209,7 @@ elseif args.locationTarget then
  locTarget = {x=args.locationTarget[1],y=args.locationTarget[2],z=args.locationTarget[3]}
 else
  locTarget = locSource
+end
 if not args.item then
  print('Invalid item')
  return

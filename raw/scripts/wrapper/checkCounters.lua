@@ -29,7 +29,7 @@ function checkCounters(unit,array)
  else
   tables[counter] = tostring(increase)
  end
- if style = 'minimum' then
+ if style == 'minimum' then
   if tables[counter] >= cap and cap >= 0 then
    return true, "Minimum counter reached"
   else
