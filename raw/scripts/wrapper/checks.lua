@@ -235,7 +235,7 @@ local function checkCounters(unit,array)
   else
    return false, "Minimum counter not reached"
   end
- elseif style = 'percent' then
+ elseif style == 'percent' then
   rando = dfhack.random.new()
   roll = rando:drandom()
   if roll <= tables[counter]/cap and cap >=1 then

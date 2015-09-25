@@ -130,7 +130,7 @@ validArgs = validArgs or utils.invert({
  'clear',
  'checkEvery',
  'building',
- 'location''
+ 'location',
  'number',
  'liquid',
 })
