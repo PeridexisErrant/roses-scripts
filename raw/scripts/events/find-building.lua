@@ -19,51 +19,51 @@ function findBuilding(search)
  if primary == 'RANDOM' then
   if secondary == 'NONE' or secondary == 'ALL' then
    for i,x in pairs(buildingList) do
-	n = n + 1
-	targetList[n] = x
+    n = n + 1
+    targetList[n] = x
    end
   elseif secondary == 'WORKSHOP' then
    for i,x in pairs(buildingList) do
     if df.building_workshopst:is_instance(x) then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'FURNACE' then
    for i,x in pairs(buildingList) do
     if df.building_furnacest:is_instance(x) then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'TRADE_DEPOT' then
    for i,x in pairs(buildingList) do
     if df.building_tradedepotst:is_instance(x) then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'STOCKPILE' then
    for i,x in pairs(buildingList) do
     if df.building_stockpilest:is_instance(x) then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'ZONE' then
    for i,x in pairs(buildingList) do
     if df.building_civzonest:is_instance(x) then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'CUSTOM' then
    for i,x in pairs(buildingList) do
     if df.building_workshopst:is_instance(x) or df.building_furnacest:is_instance(x) then
      if ctype >= 0 then
-      if df.global.world.raws.buildings.all[ctype].code == tertiary then 
+      if df.global.world.raws.buildings.all[ctype].code == tertiary then
        n = n+1
-	   targetList[n] = x
+       targetList[n] = x
       end
      end
     end

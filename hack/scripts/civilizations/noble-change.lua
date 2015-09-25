@@ -52,14 +52,14 @@ if add then
    for _,i in pairs(civs[entity]['Level']._children) do
     local x = civs[entity]['Level'][i]
     for _,j in pairs(x['AddPosition']._children) do
-	 local y = x['AddPosition'][j]
+     local y = x['AddPosition'][j]
      if mobj == j then
       pos = df['entity_position']:new()
       pos.code = mobj
       pos.id = positions.next_position_id
       positions.next_position_id = positions.next_position_id + 1
       for _,k in pairs(y['AllowedCreature']._children) do
-	   local z = y['AllowedCreature'][k]
+       local z = y['AllowedCreature'][k]
        for _,w in pairs(df.global.world.raws.creatures.all) do
         if k == w.creature_id then
          for _,v in pairs(w.caste) do
@@ -71,7 +71,7 @@ if add then
        end
       end
       for _,k in pairs(y['RejectedCreature']._children) do
-	   local z = y['RejectedCreature'][k]
+       local z = y['RejectedCreature'][k]
        for _,w in pairs(df.global.world.raws.creatures.all) do
         if k == w.creature_id then
          for _,v in pairs(w.caste) do
@@ -83,11 +83,11 @@ if add then
        end
       end
       for _,k in pairs(y['AllowedClass']._children) do
-	   local z = y['AllowedClass'][k]
+       local z = y['AllowedClass'][k]
        pos.allowed_class:insert('#',z)
       end
       for _,k in pairs(y['RejectedClass']._children) do
-	   local z = y['AllowedClass'][k]
+       local z = y['AllowedClass'][k]
        pos.rejected_class:insert('#',z)
       end
       if y['Name'] then 
@@ -235,7 +235,7 @@ if add then
       end
       if y['Flags'] then
        for _,v in pairs(y['Flags']._children) do
-	    local w = y['Flags'][v]
+        local w = y['Flags'][v]
         if pos.flags[v] then pos.flags[v] = true end
        end
       end
@@ -245,7 +245,7 @@ if add then
        pos.number = -1
       end
       for _,v in pairs(y['AppointedBy']._children) do
-	   local w = y['Flags'][v]
+       local w = y['Flags'][v]
        p = -1
        own = false
        site = false

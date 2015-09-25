@@ -29,7 +29,7 @@ function effect(etype,mental,unitTarget,ctype,strength,dur)
  value = math.floor(value)
  if value > int16 then value = int16 end
  if value < 0 then value = 0 end
- if mental == 'physical' then 
+ if mental == 'physical' then
   unitTarget.body.physical_attrs[etype].value = value
  elseif mental == 'mental' then
   unitTarget.status.current_soul.mental_attrs[etype].value = value
@@ -38,7 +38,7 @@ function effect(etype,mental,unitTarget,ctype,strength,dur)
  if persistTable.GlobalTable.roses then
   local unitTable = persistTable.GlobalTable.roses.UnitTable
   if unitTable[tostring(unitTarget.id)] then
-   unitTable[tostring(unitTarget.id)].Stats = unitTable[tostring(unitTarget.id)].Stats or {}  
+   unitTable[tostring(unitTarget.id)].Stats = unitTable[tostring(unitTarget.id)].Stats or {}
   else
    unitTable[tostring(unitTarget.id)] = {}
    unitTable[tostring(unitTarget.id)].Stats = {}

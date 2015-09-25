@@ -19,15 +19,15 @@ function addexperience(unit,amount,verbose)
    local currentClassName = currentClass['Name']
    local currentClassLevel = tonumber(unitClasses[currentClassName]['Level'])
    if currentClassLevel < tonumber(classes[currentClassName]['Levels']) then
-	classExpLevel = tonumber(split(classes[currentClassName]['Experience'][currentClassLevel+1],']')[1])
+    classExpLevel = tonumber(split(classes[currentClassName]['Experience'][currentClassLevel+1],']')[1])
     if tonumber(currentClass['CurrentExp']) >= classExpLevel then
-     if verbose then 
-	  print('LEVEL UP!! '..currentClassName..' LEVEL '..tostring(tonumber(currentClassLevel)+1))
-	  dfhack.run_command('classes/level-up -unit '..tostring(kill_id)..' -verbose')
-	 else
-	  dfhack.run_command('classes/level-up -unit '..tostring(kill_id))
-	 end
-	end
+     if verbose then
+      print('LEVEL UP!! '..currentClassName..' LEVEL '..tostring(tonumber(currentClassLevel)+1))
+      dfhack.run_command('classes/level-up -unit '..tostring(kill_id)..' -verbose')
+     else
+      dfhack.run_command('classes/level-up -unit '..tostring(kill_id))
+     end
+    end
    end
   end
  end

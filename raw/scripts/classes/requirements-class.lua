@@ -24,7 +24,7 @@ function checkClass(unit,change,verbose)
  local classes = persistTable.GlobalTable.roses.ClassTable
  local currentClassName = currentClass['Name']
  local currentClassLevel = 0
--- Check if the unit meets the class and attribute requirements 
+-- Check if the unit meets the class and attribute requirements
  for _,x in pairs(classes[change]['RequiredClass']._children) do
   local classCheck = unitClasses[x]
   local i = classes[change]['RequiredClass'][x]
@@ -41,7 +41,7 @@ function checkClass(unit,change,verbose)
    yes = false
   elseif tonumber(i) == 0 and tonumber(classCheck['Experience']) > 0 then
    if verbose then print('Already a member of a forbidden class. '..x) end
-   yes = false   
+   yes = false
   end
  end
  for _,x in pairs(classes[change]['RequiredCounter']._children) do

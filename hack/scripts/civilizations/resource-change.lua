@@ -114,15 +114,15 @@ if mtype == 'CREATURE' then
   for i,x in pairs(races) do
    if creature[x] then
     if creature[x][castes[i]] then
-	 removing[int] = i
-	 int = int + 1
+     removing[int] = i
+     int = int + 1
     end
    end
   end
   for i = #removing,1,-1 do
    races:erase(removing[i])
    castes:erase(removing[i])
-  end   
+  end
  elseif add then
   for i,x in pairs(creature) do
    for j,y in pairs(x) do
@@ -254,7 +254,7 @@ elseif mtype == 'INORGANIC' then
    end
   else
    print('Material not valid ['..check..'] material')
-  end  
+  end
  end
 -- ===============================================================================================
 elseif mtype == 'ORGANIC' then

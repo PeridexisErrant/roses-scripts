@@ -15,7 +15,7 @@ function effect(skill,unit,ctype,strength)
   for i,x in ipairs(skills) do
    if x.id == skillid then
     found = true
-	token = x
+    token = x
     current = x.rating
     if ctype == 'fixed' then
      value = current + strength
@@ -27,7 +27,7 @@ function effect(skill,unit,ctype,strength)
     elseif ctype == 'set' then
      value = strength
      change = current-value
-	end
+    end
     break
    end
   end
@@ -39,7 +39,7 @@ function effect(skill,unit,ctype,strength)
   for i,x in ipairs(skills) do
    if x.id == skillid then
     found = true
-	token = x
+    token = x
     current = x.rating
     if ctype == 'fixed' then
      value = current + strength
@@ -51,7 +51,7 @@ function effect(skill,unit,ctype,strength)
     elseif ctype == 'set' then
      value = strength
      change = current-value
-	end
+    end
    end
   end
  end
@@ -64,7 +64,7 @@ function effect(skill,unit,ctype,strength)
  if persistTable.GlobalTable.roses then
   local unitTable = persistTable.GlobalTable.roses.UnitTable
   if unitTable[tostring(unit.id)] then
-   unitTable[tostring(unit.id)].Skills = unitTable[tostring(unit.id)].Skills or {}  
+   unitTable[tostring(unit.id)].Skills = unitTable[tostring(unit.id)].Skills or {}
   else
    unitTable[tostring(unit.id)] = {}
    unitTable[tostring(unit.id)].Skills = {}

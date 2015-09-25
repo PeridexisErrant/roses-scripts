@@ -20,97 +20,97 @@ function findItem(search)
   if secondary == 'NONE' or secondary == 'ALL' then
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'WEAPON' then
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) and df.item_weaponst:is_instance(x) then
-	 if x.subtype then
-	  if tertiary == x.subtype.id or tertiary == 'NONE' then
-	   n = n + 1
-	   targetList[n] = x
-	  end
-	 end
-	end
+     if x.subtype then
+      if tertiary == x.subtype.id or tertiary == 'NONE' then
+       n = n + 1
+       targetList[n] = x
+      end
+     end
+    end
    end
   elseif secondary == 'ARMOR' then
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) and df.item_armorst:is_instance(x) then
-	 if x.subtype then
-	  if tertiary == x.subtype.id or tertiary == 'NONE' then
-	   n = n + 1
-	   targetList[n] = x
-	  end
-	 end
-	end
+     if x.subtype then
+      if tertiary == x.subtype.id or tertiary == 'NONE' then
+       n = n + 1
+       targetList[n] = x
+      end
+     end
+    end
    end
   elseif secondary == 'HELM' then
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) and df.item_helmst:is_instance(x) then
-	 if x.subtype then
-	  if tertiary == x.subtype.id or tertiary == 'NONE' then
-	   n = n + 1
-	   targetList[n] = x
-	  end
-	 end
-	end
+     if x.subtype then
+      if tertiary == x.subtype.id or tertiary == 'NONE' then
+       n = n + 1
+       targetList[n] = x
+      end
+     end
+    end
    end
   elseif secondary == 'SHIELD' then
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) and df.item_shieldst:is_instance(x) then
-	 if x.subtype then
-	  if tertiary == x.subtype.id or tertiary == 'NONE' then
-	   n = n + 1
-	   targetList[n] = x
-	  end
-	 end
-	end
+     if x.subtype then
+      if tertiary == x.subtype.id or tertiary == 'NONE' then
+       n = n + 1
+       targetList[n] = x
+      end
+     end
+    end
    end
   elseif secondary == 'GLOVE' then
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) and df.item_glovesst:is_instance(x) then
-	 if x.subtype then
-	  if tertiary == x.subtype.id or tertiary == 'NONE' then
-	   n = n + 1
-	   targetList[n] = x
-	  end
-	 end
-	end
+     if x.subtype then
+      if tertiary == x.subtype.id or tertiary == 'NONE' then
+       n = n + 1
+       targetList[n] = x
+      end
+     end
+    end
    end
   elseif secondary == 'SHOE' then
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) and df.item_shoesst:is_instance(x) then
-	 if x.subtype then
-	  if tertiary == x.subtype.id or tertiary == 'NONE' then
-	   n = n + 1
-	   targetList[n] = x
-	  end
-	 end
-	end
+     if x.subtype then
+      if tertiary == x.subtype.id or tertiary == 'NONE' then
+       n = n + 1
+       targetList[n] = x
+      end
+     end
+    end
    end
   elseif secondary == 'PANTS' then
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) and df.item_pantsst:is_instance(x) then
-	 if x.subtype then
-	  if tertiary == x.subtype.id or tertiary == 'NONE' then
-	   n = n + 1
-	   targetList[n] = x
-	  end
-	 end
-	end
+     if x.subtype then
+      if tertiary == x.subtype.id or tertiary == 'NONE' then
+       n = n + 1
+       targetList[n] = x
+      end
+     end
+    end
    end
   elseif secondary == 'AMMO' then
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) and df.item_ammost:is_instance(x) then
-	 if x.subtype then
-	  if tertiary == x.subtype.id or tertiary == 'NONE' then
-	   n = n + 1
-	   targetList[n] = x
-	  end
-	 end
-	end
+     if x.subtype then
+      if tertiary == x.subtype.id or tertiary == 'NONE' then
+       n = n + 1
+       targetList[n] = x
+      end
+     end
+    end
    end
   elseif secondary == 'MATERIAL' then
    local mat_type = dfhack.matinfo.find(tertiary).type
@@ -118,24 +118,24 @@ function findItem(search)
    for i,x in pairs(itemList) do
     if dfhack.items.getPosition(x) and x.mat_type == mat_type and x.mat_index == mat_index then
      n = n + 1
-	 targetList[n] = x
-	end
+     targetList[n] = x
+    end
    end
   elseif secondary == 'VALUE' then
    if tertiary == 'LESS_THAN' then
     for i,x in pairs(itemList) do
      if dfhack.items.getPosition(x) and dfhack.items.getValue(x) <= tonumber(quaternary) then
       n = n + 1
-	  targetList[n] = x
-	 end
+      targetList[n] = x
+     end
     end
    elseif tertiary == 'GREATER_THAN' then
     for i,x in pairs(itemList) do
      if dfhack.items.getPosition(x) and dfhack.items.getValue(x) >= tonumber(quaternary) then
       n = n + 1
-	  targetList[n] = x
-	 end
-    end   
+      targetList[n] = x
+     end
+    end
    end
   end
  end

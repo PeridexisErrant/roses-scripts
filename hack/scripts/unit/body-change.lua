@@ -8,7 +8,7 @@ function checkbodycategory(unit,bp)
  for i,x in ipairs(bp) do
   local a = 1
   for j,y in ipairs(body) do
-   if y.category == x and not unit.body.components.body_part_status[j].missing then 
+   if y.category == x and not unit.body.components.body_part_status[j].missing then
     parts[a] = j
     a = a + 1
    end
@@ -22,7 +22,7 @@ function checkbodytoken(unit,bp)
  for i,x in ipairs(bp) do
   local a = 1
   for j,y in ipairs(body) do
-   if y.token == x and not unit.body.components.body_part_status[j].missing then 
+   if y.token == x and not unit.body.components.body_part_status[j].missing then
     parts[a] = j
     a = a + 1
    end
@@ -36,7 +36,7 @@ function checkbodyflag(unit,bp)
  for i,x in ipairs(bp) do
   local a = 1
   for j,y in ipairs(body) do
-   if y.flags[x] and not unit.body.components.body_part_status[j].missing then 
+   if y.flags[x] and not unit.body.components.body_part_status[j].missing then
     parts[a] = j
     a = a + 1
    end
@@ -50,11 +50,11 @@ function effect(etype,parts,unit,strength)
   for k,z in ipairs(parts) do
    if strength == 'fire' then
     unit.body.components.body_part_status[z].on_fire = not unit.body.components.body_part_status[z].on_fire
-	unit.flags3.body_temp_in_range = not unit.flags3.body_temp_in_range
-	change = 'fire'
+    unit.flags3.body_temp_in_range = not unit.flags3.body_temp_in_range
+    change = 'fire'
    else
     change = tostring(-strength)
-	unit.status2.body_part_temperature[z].whole=unit.status2.body_part_temperature[z].whole+strength
+    unit.status2.body_part_temperature[z].whole=unit.status2.body_part_temperature[z].whole+strength
    end
   end
  end

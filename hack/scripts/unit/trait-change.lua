@@ -8,7 +8,7 @@ function effect(etype,unitTarget,ctype,strength)
  local current = 0
  local change = 0
  
- current = unitTarget.status.current_soul.personality.traits[etype] 
+ current = unitTarget.status.current_soul.personality.traits[etype]
  if ctype == 'fixed' then
   value = current + strength
   change = -strength
@@ -29,7 +29,7 @@ function effect(etype,unitTarget,ctype,strength)
  if persistTable.GlobalTable.roses then
   local unitTable = persistTable.GlobalTable.roses.UnitTable
   if unitTable[tostring(unitTarget.id)] then
-   unitTable[tostring(unitTarget.id)].Traits = unitTable[tostring(unitTarget.id)].Traits or {}  
+   unitTable[tostring(unitTarget.id)].Traits = unitTable[tostring(unitTarget.id)].Traits or {}
   else
    unitTable[tostring(unitTarget.id)] = {}
    unitTable[tostring(unitTarget.id)].Traits = {}

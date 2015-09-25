@@ -4,27 +4,27 @@ local split = utils.split_string
 local delay = require 'persist-delay'
 
 function itemSubtypes(item) -- Taken from Putnam's itemSyndrome
-   local subtypedItemTypes =
-    {
-    ARMOR = df.item_armorst,
-    WEAPON = df.item_weaponst,
-    HELM = df.item_helmst,
-    SHOES = df.item_shoesst,
-    SHIELD = df.item_shieldst,
-    GLOVES = df.item_glovesst,
-    PANTS = df.item_pantsst,
-    TOOL = df.item_toolst,
-    SIEGEAMMO = df.item_siegeammost,
-    AMMO = df.item_ammost,
-    TRAPCOMP = df.item_trapcompst,
-    INSTRUMENT = df.item_instrumentst,
-    TOY = df.item_toyst}
-    for x,v in pairs(subtypedItemTypes) do
-        if v:is_instance(item) then 
+ local subtypedItemTypes = {
+  ARMOR = df.item_armorst,
+  WEAPON = df.item_weaponst,
+  HELM = df.item_helmst,
+  SHOES = df.item_shoesst,
+  SHIELD = df.item_shieldst,
+  GLOVES = df.item_glovesst,
+  PANTS = df.item_pantsst,
+  TOOL = df.item_toolst,
+  SIEGEAMMO = df.item_siegeammost,
+  AMMO = df.item_ammost,
+  TRAPCOMP = df.item_trapcompst,
+  INSTRUMENT = df.item_instrumentst,
+  TOY = df.item_toyst
+ }
+ for x,v in pairs(subtypedItemTypes) do
+  if v:is_instance(item) then
    return df.item_type[x]
   end
-    end
-    return false
+ end
+ return false
 end
 function upgradeitem(args,v,dur,subtype)
  local sitems = {}
@@ -44,8 +44,8 @@ function upgradeitem(args,v,dur,subtype)
   local itemList = df.global.world.items.all
   local k = 1
   for i,x in ipairs(itemList) do
-   if (v:is_instance(x) and (x.subtype.id == subtype or subtype == 'ALL')) then 
-    sitems[k] = itemList[i] 
+   if (v:is_instance(x) and (x.subtype.id == subtype or subtype == 'ALL')) then
+    sitems[k] = itemList[i]
     k = k + 1
    end
   end
@@ -54,8 +54,8 @@ function upgradeitem(args,v,dur,subtype)
   local itemList = df.global.world.items.all
   local k = 1
   for i,x in ipairs(itemList) do
-   if (v:is_instance(x) and (x.subtype.id == subtype or subtype == 'ALL')) then 
-    sitems[k] = itemList[i] 
+   if (v:is_instance(x) and (x.subtype.id == subtype or subtype == 'ALL')) then
+    sitems[k] = itemList[i]
     k = k + 1
    end
   end
@@ -106,9 +106,9 @@ function upgradeitem(args,v,dur,subtype)
    item_index = itemSubtypes(x)
    for i=0,dfhack.items.getSubtypeCount(item_index)-1,1 do
     item_sub = dfhack.items.getSubtypeDef(item_index,i)
-    if item_sub.id == args.type then 
-	 x:setSubtype(item_sub.subtype)
-	end
+    if item_sub.id == args.type then
+     x:setSubtype(item_sub.subtype)
+    end
    end
    if dur > 0 then dfhack.script_environment('persist-delay').persistentDelay(dur,'item/subtype-change -item '..tostring(x.id)..' -type '..tostring(sid)) end
   end
@@ -162,15 +162,15 @@ if args.help then -- Help declaration
    -shoes SUBTYPE or ALL  |
      change shoes         | Must have at least one of these arguments
    -shield SUBTYPE or ALL |
-     change shield        | 
+     change shield        |
    -gloves SUBTYPE or ALL |
      change gloves        |
    -pants SUBTYPE or ALL  |
-     change pants         | 
+     change pants         |
    -ammo SUBTYPE or ALL   |
      change ammo          /
    -dur #
-	 length of time, in in-game ticks, for the quality change to last
+     length of time, in in-game ticks, for the quality change to last
      0 means the change is permanent
      DEFAULT: 0
    -upgrade                                              \

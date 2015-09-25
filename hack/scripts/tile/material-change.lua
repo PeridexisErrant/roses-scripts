@@ -73,7 +73,7 @@ function changeType(x,y,z,material,dur,removes)
     if df.block_square_event_mineralst:is_instance(b.block_events[k]) and b.block_events[k].inorganic_mat == mat.index then
      b.block_events:erase(k)
     end
-   end   
+   end
   else
    set_vein(x,y,z,mat)
   end
@@ -118,7 +118,7 @@ if args.help then -- Help declaration
      0 means the change is natural and will revert back to normal temperature
      DEFAULT 0
   examples:
-   tile/material-change -location [\\LOCATION] -material RUBY 
+   tile/material-change -location [\\LOCATION] -material RUBY
  ]])
  return
 end

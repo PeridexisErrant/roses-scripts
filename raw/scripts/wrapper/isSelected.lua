@@ -40,7 +40,7 @@ local function isSelected(unitSelf,unitCenter,unitTarget,args,count)
       output['selected'] = {false}
       output['targets'] = {'NONE'}
       output['announcement'] = {'Casting failed, ' .. tostring(unitSelf.name.first_name) .. ' is prevented from using the interaction.'}
-      return output 
+      return output
      end
     end
    end
@@ -48,7 +48,7 @@ local function isSelected(unitSelf,unitCenter,unitTarget,args,count)
  end
 
 -- Distance Check
- local selected,targetList,announcement = checks.checkDistance(unitTarget,radius,plan) 
+ local selected,targetList,announcement = checks.checkDistance(unitTarget,radius,plan)
 
 -- Unit Checks
  for i = 1, #targetList, 1 do
@@ -66,7 +66,7 @@ local function isSelected(unitSelf,unitCenter,unitTarget,args,count)
     local rsynclass=syndromes[x.type].syn_class
     for _,y in ipairs(rsynclass) do
      for _,z in ipairs(reflect) do
-      if z == y.value then 
+      if z == y.value then
        targetList[i] = unitSelf
        announcement[i] = tostring(unitCheck.name.first_name) .. ' reflects the interaction back towards ' .. tostring(unitSelf.name.first_name) .. '.'
        unitCheck = unitSelf
@@ -126,7 +126,7 @@ local function isSelected(unitSelf,unitCenter,unitTarget,args,count)
    selected[i],announcement[i] = checks.checkTypes(unitCheck,iclass,icreature,isyndrome,itoken,true)
   end
 
--- Required Check 
+-- Required Check
   if (aclass ~= 'NONE' or acreature ~= 'NONE' or asyndrome ~= 'NONE' or atoken ~= 'NONE') and selected[i] then
    selected[i],announcement[i] = checks.checkTypes(unitCheck,aclass,acreature,asyndrome,atoken,false)
   end

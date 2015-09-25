@@ -13,7 +13,7 @@ function counters(types,unit,counter,increase,style,cap)
     tables = unitTable.Counters
    else
     unitTable.Counters = {}
-	tables = unitTable.Counters
+    tables = unitTable.Counters
    end
   else
    persistTable.GlobalTable.roses.UnitTable[tostring(unit.id)] = {}
@@ -88,7 +88,7 @@ if args.help then -- Help declaration
      once it hits the cap (or is triggered earlier by percentage) the counter will reset to 0
      if no cap is given then script will never be run
    -script [ command line input ]
-     the script to trigger when the counter is reached 
+     the script to trigger when the counter is reached
   example:
    special/counters -unit \\UNIT_ID -style minimum -counter BERSERK -increment 1 -cap 10 -script [unit-attributes-change -unit \\UNIT_ID -physical [STRENGTH,AGILITY] -fixed [1000,\-200] ]
  ]])

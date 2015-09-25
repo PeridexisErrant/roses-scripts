@@ -89,10 +89,10 @@ function propel(ptype,unitTarget,strength,unitSource)
  proj.speed_y=resulty
  proj.speed_z=resultz
  unitoccupancy = dfhack.maps.ensureTileBlock(unitTarget.pos).occupancy[unitTarget.pos.x%16][unitTarget.pos.y%16]
- if not unitTarget.flags1.on_ground then 
-  unitoccupancy.unit = false 
- else 
-  unitoccupancy.unit_grounded = false 
+ if not unitTarget.flags1.on_ground then
+  unitoccupancy.unit = false
+ else
+  unitoccupancy.unit_grounded = false
  end
  unitTarget.flags1.projectile=true
  unitTarget.flags1.on_ground=false

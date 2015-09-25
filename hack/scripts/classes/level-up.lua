@@ -46,13 +46,13 @@ function levelUp(unit,verbose)
    if tonumber(i['RequiredLevel']) <= currentClassLevel then
     if verbose then
      if i['AutoLearn'] then dfhack.run_command('classes/learn-skill -unit '..tostring(unit)..' -spell '..x..' -verbose') end
-	else
-	 if i['AutoLearn'] then dfhack.run_command('classes/learn-skill -unit '..tostring(unit)..' -spell '..x) end
-	end
+    else
+     if i['AutoLearn'] then dfhack.run_command('classes/learn-skill -unit '..tostring(unit)..' -spell '..x) end
+    end
    end
   end
- if currentClassLevel == tonumber(classes[currentClassName]['Levels']) then 
-  if verbose then 
+ if currentClassLevel == tonumber(classes[currentClassName]['Levels']) then
+  if verbose then
    print('REACHED MAX LEVEL FOR CLASS '..currentClassName)
    if classes[currentClassName]['AutoUpgrade'] then dfhack.run_command('classes/change-class -unit '..tostring(unit)..' -class '..classes[currentClassName]['AutoUpgrade']..' -verbose') end
   else

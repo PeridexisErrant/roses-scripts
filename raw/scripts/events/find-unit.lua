@@ -24,71 +24,71 @@ function findUnit(search)
   elseif secondary == 'POPULATION' then
    for i,x in pairs(unitList) do
     if dfhack.units.isCitizen(x) then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'CIVILIZATION' then
    for i,x in pairs(unitList) do
     if x.civ_id == df.global.ui.civ_id then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'INVADER' then
    for i,x in pairs(unitList) do
     if x.invasion_id >= 0 then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'MALE' then
    for i,x in pairs(unitList) do
     if x.sex == 0 then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'FEMALE' then
    for i,x in pairs(unitList) do
     if x.sex == 1 then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'PROFESSION' then
    for i,x in pairs(unitList) do
     if tertiary == dfhack.units.getProfessionName(x) then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   elseif secondary == 'CLASS' then
    for i,x in pairs(unitList) do
     if persistTable.GlobalTable.roses.UnitTable[x.id] then
-	 if persistTable.GlobalTable.roses.UnitTable[x.id].Classes.Current.Name == tertiary then
-	  n = n + 1
-	  targetList[n] = x
-	 end
-	end
+     if persistTable.GlobalTable.roses.UnitTable[x.id].Classes.Current.Name == tertiary then
+      n = n + 1
+      targetList[n] = x
+     end
+    end
    end
   elseif secondary == 'SKILL' then
    for i,x in pairs(unitList) do
     if dfhack.units.getEffectiveSkill(x,df.job_skill[tertiary]) >= tonumber(quaternary) then
-	 n = n + 1
-	 targetList[n] = x
-	end
+     n = n + 1
+     targetList[n] = x
+    end
    end
   else
    for i,x in pairs(unitList) do
     creature = df.global.world.raws.creatures.all[x.race].creature_id
-	caste = df.global.world.raws.creatures.all[x.race].caste[x.caste].caste_id
-	if secondary == creature then
-	 if tertiary == caste or tertiary == 'NONE' then
-	  n = n + 1
-	  targetList[n] = x
-	 end
-	end
+    caste = df.global.world.raws.creatures.all[x.race].caste[x.caste].caste_id
+    if secondary == creature then
+     if tertiary == caste or tertiary == 'NONE' then
+      n = n + 1
+      targetList[n] = x
+     end
+    end
    end
   end
  end

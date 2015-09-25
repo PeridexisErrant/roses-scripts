@@ -88,7 +88,7 @@ if dfhack.script_environment('events/requirements-check').checkRequirements(even
      for k = 1,wghtarray[j],1 do
       tempint = tempint+1
       temparray[tempint] = j
- 	 end
+      end
     end
     argumentNum = permute(temparray)[1]
     if argument['Equation'] then
@@ -97,7 +97,7 @@ if dfhack.script_environment('events/requirements-check').checkRequirements(even
      arg[int] = split(argument.Value,',')[argumentNum]
     else
      print('Problem with selection of argument')
-	 return
+     return
     end
    end
    for j = 1,scripts,1 do
@@ -112,7 +112,7 @@ if dfhack.script_environment('events/requirements-check').checkRequirements(even
     if delay == 0 then
      dfhack.run_command(script)
     else
-	 dfhack.script_environment('persist_delay').persistentDelay(delay,table.unpack(script))
+     dfhack.script_environment('persist_delay').persistentDelay(delay,table.unpack(script))
     end
    end
   end

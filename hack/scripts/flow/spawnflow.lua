@@ -3,19 +3,19 @@
 local utils = require 'utils'
 
 flowtypes = {
-miasma = 0,
-mist = 1,
-mist2 = 2,
-dust = 3,
-lavamist = 4,
-smoke = 5,
-dragonfire = 6,
-firebreath = 7,
-web = 8,
-undirectedgas = 9,
-undirectedvapor = 10,
-oceanwave = 11,
-seafoam = 12
+ miasma = 0,
+ mist = 1,
+ mist2 = 2,
+ dust = 3,
+ lavamist = 4,
+ smoke = 5,
+ dragonfire = 6,
+ firebreath = 7,
+ web = 8,
+ undirectedgas = 9,
+ undirectedvapor = 10,
+ oceanwave = 11,
+ seafoam = 12
 }
 
 function storm(stype,unit,radius,number,itype,strength)
@@ -89,7 +89,7 @@ if args.help then -- Help declaration
       IRON
       RUBY
    -flow TYPE
-	 specify the flow type
+     specify the flow type
      valid types:
       miasma
       mist

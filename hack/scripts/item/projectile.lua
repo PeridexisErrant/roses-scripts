@@ -8,12 +8,12 @@ function projectile(args,locSource,locTarget,itemType,itemSubtype,number,velocit
   if create then
    if not args.creator or not tonumber(args.creator) or not df.unit.find(tonumber(args.creator)) then
     print('Invalid creator')
-	return
+    return
    end
    args.creator = df.unit.find(tonumber(args.creator))
    if not args.creator then
     print('Invalid creator')
-	return
+    return
    end
    if not args.mat then
     print('Invalid material')
@@ -31,19 +31,19 @@ function projectile(args,locSource,locTarget,itemType,itemSubtype,number,velocit
    local inventory = args.creator.inventory
    for k,v in ipairs(inventory) do
     testitem = v.item
-	if testitem:getType() == itemType and testitem:getSubtype() == itemSubtype then
-	 item = testitem
-	else
-	 for l,w in ipairs(dfhack.items.getContainedItems(testitem)) do
-	  if w:getType() == itemType and w:getSubtype() == itemSubtype then
-	   item = w
-	   break
-	  end
-	 end
-	end
+    if testitem:getType() == itemType and testitem:getSubtype() == itemSubtype then
+     item = testitem
+    else
+     for l,w in ipairs(dfhack.items.getContainedItems(testitem)) do
+      if w:getType() == itemType and w:getSubtype() == itemSubtype then
+       item = w
+       break
+      end
+     end
+    end
     if item then break end
    end
-   if not item then 
+   if not item then
     print('Needed item not equipped')
     return
    end
@@ -51,9 +51,9 @@ function projectile(args,locSource,locTarget,itemType,itemSubtype,number,velocit
     dfhack.items.moveToGround(item,{x=tonumber(locSource.x),y=tonumber(locSource.y),z=tonumber(locSource.z+height)})
    else
     item.stack_size = item.stack_size - 1
-	item = dfhack.items.createItem(itemType,itemSubtype,item.mat_type,item.mat_index,dfhack.items.getHolderUnit(item))
-	item = df.item.find(item)
-	dfhack.items.moveToGround(item,{x=tonumber(locSource.x),y=tonumber(locSource.y),z=tonumber(locSource.z+height)})
+    item = dfhack.items.createItem(itemType,itemSubtype,item.mat_type,item.mat_index,dfhack.items.getHolderUnit(item))
+    item = df.item.find(item)
+    dfhack.items.moveToGround(item,{x=tonumber(locSource.x),y=tonumber(locSource.y),z=tonumber(locSource.z+height)})
    end
   end
   
@@ -145,7 +145,7 @@ if args.help then -- Help declaration
      specify the itemdef of the item to be created
      examples:
       WEAPON:ITEM_WEAPON_PICK
-	  AMMO:ITEM_AMMO_BOLT
+      AMMO:ITEM_AMMO_BOLT
    -mat matstring
      specify the material of the item to be created
      examples:
@@ -169,15 +169,15 @@ if args.help then -- Help declaration
      DEFAULT 50
    -height #
      height above the source location to start the item
-	 DEFAULT 0
+     DEFAULT 0
    -equipped
      whether to check unitSource for the equipped item, if absent assumes you want the item to be created
    -falling
      whether to use falling mechanics, if absent assumes you want to use shooting mechanics
-	 Falling Mechanics:
-	  Only -height is used, item will start at the source location + height. unitTarget/locationTarget is not needed
-	 Shooting Mechanics:
-	  -minrange, -maxrange, -velocity, -hitchance, and -height are all used. unitTarget/locationTarget are required
+     Falling Mechanics:
+      Only -height is used, item will start at the source location + height. unitTarget/locationTarget is not needed
+     Shooting Mechanics:
+      -minrange, -maxrange, -velocity, -hitchance, and -height are all used. unitTarget/locationTarget are required
   examples:
    special-projectile -unit_source \\UNIT_ID -location_target [\\LOCATION] -item AMMO:ITEM_AMMO_ARROWS -mat STEEL -number 10 -maxrange 50 -minrange 10 -velocity 30 -hitchance 10
  ]])

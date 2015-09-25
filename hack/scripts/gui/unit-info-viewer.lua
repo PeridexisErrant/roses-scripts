@@ -422,7 +422,7 @@ function Identity:init(args)
     self.missing = true
    end
   end
-  -- slaughtered? 
+  -- slaughtered?
   if self.death_event then
    self.death_date = Time{year = self.death_event.year, ticks = self.death_event.seconds}
   elseif self.incident then
@@ -656,7 +656,7 @@ function UnitInfoViewer:chunk_Age()
   end
  end
  local blurb = i.pronoun..' is '..age_str
- if i.race_id == df.global.ui.race_id then 
+ if i.race_id == df.global.ui.race_id then
   blurb = blurb..', born on the '..i.birth_date:getDayStr()..' of '..i.birth_date:getMonthStr()..' in the year '..tostring(i.birth_date.year)..PERIOD
  else
   blurb = blurb..PERIOD
@@ -785,7 +785,7 @@ end
 if dfhack.gui.getCurFocus() ~= 'dfhack/lua/'..UnitInfoViewer.focus_path then
  local gui_no_unit = false -- show if not found?
  local unit = getUnit_byVS(gui_no_unit) -- silent? or let the gui display
- if unit or gui_no_unit then 
+ if unit or gui_no_unit then
   local kan_viewscreen = UnitInfoViewer{unit = unit}
   kan_viewscreen:show()
  end

@@ -9,15 +9,15 @@ function effect(e,unitTarget,ctype,strength)
  local int32 = 200000000
  if (e == 'webbed' or e == 'stunned' or e == 'winded' or e == 'unconscious' or e == 'pain'
  or e == 'nausea' or e == 'dizziness') then
-  current = unitTarget.counters[e] 
- elseif (e == 'paralysis' or e == 'numbness' or e == 'fever' or e == 'exhaustion' 
+  current = unitTarget.counters[e]
+ elseif (e == 'paralysis' or e == 'numbness' or e == 'fever' or e == 'exhaustion'
  or e == 'hunger' or e == 'thirst' or e == 'sleepiness') then
   if (e == 'hunger' or e == 'thirst' or e == 'sleepiness') then e = e .. '_timer' end
-  current = unitTarget.counters2[e] 
+  current = unitTarget.counters2[e]
  elseif e == 'blood' then
   current = unitTarget.body.blood_count
  elseif e == 'infection' then
-  current = unitTarget.body.infection_level 
+  current = unitTarget.body.infection_level
  end
  
  if ctype == 'fixed' then
@@ -37,7 +37,7 @@ function effect(e,unitTarget,ctype,strength)
   if value > int16 then value = int16 end
   if value < 0 then value = 0 end
   unitTarget.counters[e] = value
- elseif (e == 'paralysis' or e == 'numbness' or e == 'fever' or e == 'exhaustion' 
+ elseif (e == 'paralysis' or e == 'numbness' or e == 'fever' or e == 'exhaustion'
  or e == 'hunger' or e == 'thirst' or e == 'sleepiness') then
   if (e == 'hunger' or e == 'thirst' or e == 'sleepiness') then e = e .. '_timer' end
   if value > int16 then value = int16 end
@@ -51,7 +51,7 @@ function effect(e,unitTarget,ctype,strength)
   if value > int16 then value = int16 end
   if value < 0 then value = 0 end
   unitTarget.body.infection_level = value
- end 
+ end
 
  return change
 end
@@ -96,7 +96,7 @@ if args.help then -- Help declaration
       thirst
       sleepiness
       blood
-      infection    
+      infection
    -dur #
      length of time, in in-game ticks, for the change to last
      0 means the change is permanent

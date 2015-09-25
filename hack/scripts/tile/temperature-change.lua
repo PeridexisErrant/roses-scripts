@@ -52,7 +52,7 @@ function changeTemp(x,y,z,temp,dur)
  local stemp2 = block.temperature_2[x%16][y%16]
 
  block.temperature_1[x%16][y%16] = temp
- if dur >= 0 then 
+ if dur >= 0 then
   block.temperature_2[x%16][y%16] = temp
   block.flags.update_temperature = false
  end
@@ -87,7 +87,7 @@ function clear_vein(x,y,z)
 end
 function changeType(x,y,z,material,dur)
  local mat
- if material ~= 'clear' then 
+ if material ~= 'clear' then
   mat = dfhack.matinfo.find(material)
   set_vein(x,y,z,mat)
  else

@@ -16,7 +16,7 @@ function imbueinventory(v,mat,dur)
   end
  end
 
- if #items == 0 then 
+ if #items == 0 then
   print('No necessary item equiped')
   return
  end
@@ -87,11 +87,11 @@ if args.help then -- Help declaration
    -shoes           |
      change shoes   | Must have at least one of these arguments if using -unit
    -shield          |
-     change shield  | 
+     change shield  |
    -gloves          |
      change gloves  |
    -pants           |
-     change pants   | 
+     change pants   |
    -ammo            |
      change ammo    /
    -mat matstring

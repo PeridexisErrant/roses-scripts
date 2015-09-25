@@ -13,7 +13,7 @@ function check(unit,unitTarget,radius)
  elseif radius == -1 and unit.id ~= unitTarget.id then
   return false
  end
-	
+
  local xmin = unitTarget.pos.x - radius
  local xmax = unitTarget.pos.x + radius
  local ymin = unitTarget.pos.y - radius
@@ -21,10 +21,10 @@ function check(unit,unitTarget,radius)
  local zmin = unitTarget.pos.z - radius
  local zmax = unitTarget.pos.z + radius
 
- if (unit.pos.x >= xmin and unit.pos.x <= xmax and unit.pos.y >= ymin and unit.pos.y <= ymax and unit.pos.z >= zmin and unit.pos.z <= zmax) then 
+ if (unit.pos.x >= xmin and unit.pos.x <= xmax and unit.pos.y >= ymin and unit.pos.y <= ymax and unit.pos.z >= zmin and unit.pos.z <= zmax) then
   if unit.civ_id == unitTarget.civ_id then return true end
  end
-	
+
  return false
 end
 
@@ -52,24 +52,24 @@ events.onUnitDeath.expGain=function(unit_id)
      end
     end
     dfhack.script_environment('classes/establish-class').establishClass(df.unit.find(tonumber(kill_id)))
-	local unitClasses = persistTable.GlobalTable.roses.UnitTable[tostring(kill_id)]['Classes']
-	local currentClass = persistTable.GlobalTable.roses.UnitTable[tostring(kill_id)]['Classes']['Current']
-	local classes = persistTable.GlobalTable.roses.ClassTable
+    local unitClasses = persistTable.GlobalTable.roses.UnitTable[tostring(kill_id)]['Classes']
+    local currentClass = persistTable.GlobalTable.roses.UnitTable[tostring(kill_id)]['Classes']['Current']
+    local classes = persistTable.GlobalTable.roses.ClassTable
     currentClass['CurrentExp'] = tostring(tonumber(currentClass['CurrentExp'])+exps)
     currentClass['TotalExp'] = tostring(tonumber(currentClass['TotalExp'])+exps)
     currentClass['SkillExp'] = tostring(tonumber(currentClass['SkillExp'])+exps)
     --print(kill_name..' '..tostring(kill_id)..' killed '..name..' '..tostring(unit_id)..' and earned '..tostring(exps)..' experience. Total experience is '..persistTable.GlobalTable.roses.UnitTable[tostring(kill_id)]['Classes']['Current']['TotalExp']))
     if currentClass['Name'] ~= 'None' then
-	 local currentClassName = currentClass['Name']
+     local currentClassName = currentClass['Name']
      local currentClassLevel = tonumber(unitClasses[currentClassName]['Level'])
      if currentClassLevel < tonumber(classes[currentClassName]['Levels']) then
-	  classExpLevel = tonumber(split(classes[currentClassName]['Experience'][currentClassLevel+1],']')[1])
+      classExpLevel = tonumber(split(classes[currentClassName]['Experience'][currentClassLevel+1],']')[1])
       if tonumber(currentClass['CurrentExp']) > classExpLevel then
        print('LEVEL UP!! '..currentClassName..' LEVEL '..tostring(tonumber(currentClassLevel)+1))
-	   dfhack.run_command('classes/level-up -unit '..tostring(kill_id))
-	  end
-	 end
-	end
+       dfhack.run_command('classes/level-up -unit '..tostring(kill_id))
+      end
+     end
+    end
    end
   end
  end

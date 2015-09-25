@@ -12,7 +12,7 @@ checkEvery = checkEvery or 100
 timeoutId = timeoutId or nil
 
 eventful.enableEvent(eventful.eventType.UNLOAD,1)
-eventful.onUnload.outsideOnly = function()
+eventful.onUnload.buildingTrigger = function()
  registeredBuildings = {}
  checkEvery = 100
  timeoutId = nil
@@ -79,21 +79,21 @@ local function checkBuildings()
   if bliquid then
    for i = building.x1-1,building.x2+1,1 do
     for j = building.y1-1,building.y2+1,1 do
-	 local designation = dfhack.maps.getTileBlock(i,j,building.z-1).designation[i%16][j%16]
-	 if designation.flow_size > 3 then
-	  if bliquid == buildingLiquid.EITHER then
-	   ok = true
-	  elseif bliquid == buildingLiquid.MAGMA then
-	   if designation.liquid_type then
-	    ok = true
-	   end
-	  else
-	   if not designation.liquid_type then
-	    ok = true
-	   end
-	  end
-	 end
-	end
+     local designation = dfhack.maps.getTileBlock(i,j,building.z-1).designation[i%16][j%16]
+     if designation.flow_size > 3 then
+      if bliquid == buildingLiquid.EITHER then
+       ok = true
+      elseif bliquid == buildingLiquid.MAGMA then
+       if designation.liquid_type then
+        ok = true
+       end
+      else
+       if not designation.liquid_type then
+        ok = true
+       end
+      end
+     end
+    end
    end
   end
   if ok then
@@ -102,7 +102,7 @@ local function checkBuildings()
     return
    else
     return
-  else	
+  else
    table.insert(toDestroy,building)
   end
  end
@@ -151,8 +151,8 @@ arguments
         specify maximum number of buildings of this type allowed
     -building name
         specify the id of the building
-	-script [ command line entry ]
-	    script to be run when building is built
+    -script [ command line entry ]
+        script to be run when building is built
 ]])
  return
 end

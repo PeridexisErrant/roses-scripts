@@ -18,8 +18,8 @@ function upgradeitem(args,v,unit,dur,subtype)
   local itemList = df.global.world.items.all
   local k = 1
   for i,x in ipairs(itemList) do
-   if (v:is_instance(x) and (x.subtype.id == subtype or subtype == 'ALL')) then 
-    sitems[k] = itemList[i] 
+   if (v:is_instance(x) and (x.subtype.id == subtype or subtype == 'ALL')) then
+    sitems[k] = itemList[i]
     k = k + 1
    end
   end
@@ -28,8 +28,8 @@ function upgradeitem(args,v,unit,dur,subtype)
   local itemList = df.global.world.items.all
   local k = 1
   for i,x in ipairs(itemList) do
-   if (v:is_instance(x) and (x.subtype.id == subtype or subtype == 'ALL')) then 
-    sitems[k] = itemList[i] 
+   if (v:is_instance(x) and (x.subtype.id == subtype or subtype == 'ALL')) then
+    sitems[k] = itemList[i]
     k = k + 1
    end
   end
@@ -103,11 +103,11 @@ if args.help then -- Help declaration
    -shoes SUBTYPE or ALL  |
      change shoes         | Must have at least one of these arguments
    -shield SUBTYPE or ALL |
-     change shield        | 
+     change shield        |
    -gloves SUBTYPE or ALL |
      change gloves        |
    -pants SUBTYPE or ALL  |
-     change pants         | 
+     change pants         |
    -ammo SUBTYPE or ALL   |
      change ammo          /
    -dur #

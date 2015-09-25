@@ -12,14 +12,14 @@ function checkRequirements(event,effect)
    local x = check['Counter'][i]
    if persistTable.GlobalTable.roses.GlobalTable.Counters[i] then
     if tonumber(persistTable.GlobalTable.roses.GlobalTable.Counters[i]) >= tonumber(x) then
-	 yes = true
-	else
-	 yes = false
-	 break
-	end
+     yes = true
+    else
+     yes = false
+     break
+    end
    else
-	yes = false
-	break
+    yes = false
+    break
    end
   end
  end
@@ -39,11 +39,11 @@ function checkRequirements(event,effect)
    local x = check['Wealth'][i]
    if df.global.ui.tasks.wealth[string.lower(i)] then
     if df.global.ui.tasks.wealth[string.lower(i)] >= tonumber(x) then
-	 yes = true
-	else
-	 yes = false
-	 break
-	end
+     yes = true
+    else
+     yes = false
+     break
+    end
    end
   end
  end
@@ -66,17 +66,17 @@ function checkRequirements(event,effect)
     if df.building_furnacest:is_instance(y) or df.building_workshopst:is_instance(y) then
      local ctype = x.custom_type
      if ctype >= 0 then
-      if df.global.world.raws.buildings.all[ctype].code == i then 
+      if df.global.world.raws.buildings.all[ctype].code == i then
        n = n+1
       end
      end
     end
-   end   
+   end
    if n >= tonumber(x) then
-	yes = true
+    yes = true
    else
-	yes = false
-	break
+    yes = false
+    break
    end
   end
  end
@@ -88,18 +88,18 @@ function checkRequirements(event,effect)
    local n = 0
    for _,y in ipairs(df.global.world.units.active) do
     if dfhack.units.isCitizen(y) then
-	 if unitTable[tostring(y.id)] then
-	  if unitTable[tostring(y.id)]['Classes']['Current']['Name'] == i then
-	   n = n + 1
-	  end
-	 end
-	end
+     if unitTable[tostring(y.id)] then
+      if unitTable[tostring(y.id)]['Classes']['Current']['Name'] == i then
+       n = n + 1
+      end
+     end
+    end
    end
    if n >= tonumber(x) then
-	yes = true
+    yes = true
    else
-	yes = false
-	break
+    yes = false
+    break
    end
   end
  end
@@ -110,18 +110,18 @@ function checkRequirements(event,effect)
    local n = 0
    for _,y in ipairs(df.global.world.units.active) do
     if dfhack.units.isCitizen(y) then
-	 local currentSkill = dfhack.units.getEffectiveSkill(y,i)
-	 if currentSkill >= tonumber(x) then
-	  n = 1
-	  break
-	 end
-	end
+     local currentSkill = dfhack.units.getEffectiveSkill(y,i)
+     if currentSkill >= tonumber(x) then
+      n = 1
+      break
+     end
+    end
    end
    if n == 1 then
-	yes = true
+    yes = true
    else
-	yes = false
-	break
+    yes = false
+    break
    end
   end
  end
@@ -132,11 +132,11 @@ function checkRequirements(event,effect)
    local x = check['Kills'][i]
    if kills[i] then
     if kills[i] >= tonumber(x) then
-	 yes = true
-	else
-	 yes = false
-	 break
-	end
+     yes = true
+    else
+     yes = false
+     break
+    end
    end
   end
  end
@@ -147,11 +147,11 @@ function checkRequirements(event,effect)
    local x = check['Deaths'][i]
    if deaths[i]['All'] then
     if deaths[i]['All'] >= tonumber(x) then
-	 yes = true
-	else
-	 yes = false
-	 break
-	end
+     yes = true
+    else
+     yes = false
+     break
+    end
    end
   end
  end
@@ -162,11 +162,11 @@ function checkRequirements(event,effect)
    local x = check['Trades'][i]
    if trades[i] then
     if trades[i] >= tonumber(x) then
-	 yes = true
-	else
-	 yes = false
-	 break
-	end
+     yes = true
+    else
+     yes = false
+     break
+    end
    end
   end
  end
@@ -177,11 +177,11 @@ function checkRequirements(event,effect)
    local x = check['Sieges'][i]
    if sieges[i] then
     if sieges[i] >= tonumber(x) then
-	 yes = true
-	else
-	 yes = false
-	 break
-	end
+     yes = true
+    else
+     yes = false
+     break
+    end
    end
   end
  end

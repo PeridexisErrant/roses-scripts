@@ -16,7 +16,7 @@ function checkCounters(unit,array)
     tables = unitTable.Counters
    else
     unitTable.Counters = {}
-	tables = unitTable.Counters
+    tables = unitTable.Counters
    end
   else
    unitTable = {}

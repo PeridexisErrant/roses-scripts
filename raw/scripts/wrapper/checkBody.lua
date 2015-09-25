@@ -11,7 +11,7 @@ local function checkBody(unit,array)
   if split(x,':')[1] == 'required' then
    if t == 'token' then
     for j,y in ipairs(utempa) do
-     if y.token == b and not unit.body.components.body_part_status[j].missing then 
+     if y.token == b and not unit.body.components.body_part_status[j].missing then
       rtempa[r] = true
      else
       rtempa[r] = false
@@ -20,7 +20,7 @@ local function checkBody(unit,array)
     end
    elseif t =='category' then
     for j,y in ipairs(utempa) do
-     if y.category == b and not unit.body.components.body_part_status[j].missing then 
+     if y.category == b and not unit.body.components.body_part_status[j].missing then
       rtempa[r] = true
      else
       rtempa[r] = false
@@ -29,7 +29,7 @@ local function checkBody(unit,array)
     end
    elseif t =='flags' then
     for j,y in ipairs(utempa) do
-     if y.flags[b] and not unit.body.components.body_part_status[j].missing then 
+     if y.flags[b] and not unit.body.components.body_part_status[j].missing then
       rtempa[r] = true
      else
       rtempa[r] = false
@@ -40,7 +40,7 @@ local function checkBody(unit,array)
   elseif split(x,':')[1] == 'immune' then
    if t == 'token' then
     for j,y in ipairs(utempa) do
-     if y.token == b and not unit.body.components.body_part_status[j].missing then 
+     if y.token == b and not unit.body.components.body_part_status[j].missing then
       itempa[i] = true
      else
       itempa[i] = false
@@ -49,7 +49,7 @@ local function checkBody(unit,array)
     end
    elseif t =='category' then
     for j,y in ipairs(utempa) do
-     if y.category == b and not unit.body.components.body_part_status[j].missing then 
+     if y.category == b and not unit.body.components.body_part_status[j].missing then
       itempa[i] = true
      else
       itempa[i] = false
@@ -58,7 +58,7 @@ local function checkBody(unit,array)
     end
    elseif t =='flags' then
     for j,y in ipairs(utempa) do
-     if y.flags[b] and not unit.body.components.body_part_status[j].missing then 
+     if y.flags[b] and not unit.body.components.body_part_status[j].missing then
       rtempa[r] = true
      else
       rtempa[r] = false

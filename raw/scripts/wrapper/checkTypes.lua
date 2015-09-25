@@ -19,7 +19,7 @@ local function checkTypes(unit,class,creature,syndrome,token,immune) -- CHECK 1
  end
  local tempa,ttempa,i,t,yes,no = {},{},1,1,false,false
  local yestext = 'Targeting failed, ' .. tostring(unit.name.first_name) .. ' is not an allowed type.'
- local notext = 'Targeting failed, ' .. tostring(unit.name.first_name) .. ' is an immune type.' 
+ local notext = 'Targeting failed, ' .. tostring(unit.name.first_name) .. ' is an immune type.'
 
  if class ~= 'NONE' then
   if type(class) ~= 'table' then class = {class} end
@@ -66,7 +66,7 @@ local function checkTypes(unit,class,creature,syndrome,token,immune) -- CHECK 1
   if type(token) ~= 'table' then token = {token} end
   for _,x in ipairs(token) do
    ttempa[t] = tokens[x]
-   t = t + 1       
+   t = t + 1
   end
  end
 
@@ -81,7 +81,7 @@ local function checkTypes(unit,class,creature,syndrome,token,immune) -- CHECK 1
   if immune then
    if x then no = true end
   else
-   if not x then 
+   if not x then
     yes = false
     break
    else

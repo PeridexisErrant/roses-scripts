@@ -23,21 +23,21 @@ function establishCivilization(civ)
    if civilizations[entity]['Level'] then
     if civilizations[entity]['Level']['0'] then
      for _,i in pairs(civilizations[entity]['Level']['0']['Remove']._children) do
-	  local w = civilizations[entity]['Level']['0']['Remove'][i]
-      for _,j in pairs(w._children) do	   
-	   local x = w[j]
-       for _,k in pairs(x._children) do	    
-	    local y = x[k]
+      local w = civilizations[entity]['Level']['0']['Remove'][i]
+      for _,j in pairs(w._children) do
+       local x = w[j]
+       for _,k in pairs(x._children) do
+        local y = x[k]
         dfhack.run_command('civilizations/resource-change',table.unpack({'-civ',key,'-type',i..':'..j,'-obj',k..':'..y,'-remove'}))
        end
       end
      end
      for _,i in pairs(civilizations[entity]['Level']['0']['Add']._children) do
-	  local w = civilizations[entity]['Level']['0']['Add'][i]
-      for _,j in pairs(w._children) do	   
-	   local x = w[j]
-       for _,k in pairs(x._children) do	    
-	    local y = x[k]
+      local w = civilizations[entity]['Level']['0']['Add'][i]
+      for _,j in pairs(w._children) do
+       local x = w[j]
+       for _,k in pairs(x._children) do
+        local y = x[k]
         dfhack.run_command('civilizations/resource-change',table.unpack({'-civ',key,'-type',i..':'..j,'-obj',k..':'..y,'-add'}))
        end
       end

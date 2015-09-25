@@ -14,17 +14,17 @@ local function changeBuilding(bldg,items,subtype,dur,direction)
   for _,x in ipairs(df.global.world.raws.buildings.all) do
    if x.code == name then ctype = x.id end
   end
-  if ctype == nil then 
-   print('Cant find upgrade building, possibly upgraded to max') 
+  if ctype == nil then
+   print('Cant find upgrade building, possibly upgraded to max')
    return
   end
   if dur > 0 then
    script = 'building/subtype-change -building '..tostring(bldg.id)..' -type downgrade'
    if items then
     script = script..' -item [ '..table.unpack(items)..' ]'
-	if direction == 1 then script = script..' -remove' end
-	if direction == -1 then script = script..' -add' end
-   end   
+    if direction == 1 then script = script..' -remove' end
+    if direction == -1 then script = script..' -add' end
+   end
    dfhack.script_environment('persist-delay').persistentDelay(dur,script)
   end
  elseif subtype == 'downgrade' then
@@ -33,23 +33,23 @@ local function changeBuilding(bldg,items,subtype,dur,direction)
   local namea = split(name,'_')
   local num = tonumber(namea[#namea])
   num = num - 1
-  if num > 0 then namea[#namea] = tostring(num) end 
+  if num > 0 then namea[#namea] = tostring(num) end
   name = table.concat(namea,'_')
   ctype = nil
   for _,x in ipairs(df.global.world.raws.buildings.all) do
    if x.code == name then ctype = x.id end
   end
-  if ctype == nil then 
-   print('Cant find upgrade building, possibly upgraded to max') 
+  if ctype == nil then
+   print('Cant find upgrade building, possibly upgraded to max')
    return
   end
   if dur > 0 then
    script = 'building/subtype-change -building '..tostring(bldg.id)..' -type upgrade'
    if items then
     script = script..' -item [ '..table.unpack(items)..' ]'
-	if direction == 1 then script = script..' -remove' end
-	if direction == -1 then script = script..' -add' end
-   end   
+    if direction == 1 then script = script..' -remove' end
+    if direction == -1 then script = script..' -add' end
+   end
    dfhack.script_environment('persist-delay').persistentDelay(dur,script)
   end
  else
@@ -60,17 +60,17 @@ local function changeBuilding(bldg,items,subtype,dur,direction)
   for _,x in ipairs(df.global.world.raws.buildings.all) do
    if x.code == name then ctype = x.id end
   end
-  if ctype == nil then 
-   print('Cant find upgrade building, possibly upgraded to max') 
+  if ctype == nil then
+   print('Cant find upgrade building, possibly upgraded to max')
    return
   end
   if dur > 0 then
    script = 'building/subtype-change -building '..tostring(bldg.id)..' -type '..sid
    if items then
     script = script..' -item [ '..table.unpack(items)..' ]'
-	if direction == 1 then script = script..' -remove' end
-	if direction == -1 then script = script..' -add' end
-   end   
+    if direction == 1 then script = script..' -remove' end
+    if direction == -1 then script = script..' -add' end
+   end
    dfhack.script_environment('persist-delay').persistentDelay(dur,script)
   end
  end
@@ -116,7 +116,7 @@ print(
    building to change the other into
    special tokens
     upgrade
-	downgrade
+    downgrade
   -dur #
    length of time in in-game ticks for the change to last, any items added will be removed, any items removed will be added
   -add

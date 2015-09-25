@@ -129,7 +129,7 @@ local function checkBody(unit,array)
   if split(x,':')[1] == 'required' then
    if t == 'token' then
     for j,y in ipairs(utempa) do
-     if y.token == b and not unit.body.components.body_part_status[j].missing then 
+     if y.token == b and not unit.body.components.body_part_status[j].missing then
       rtempa[r] = true
      else
       rtempa[r] = false
@@ -138,7 +138,7 @@ local function checkBody(unit,array)
     end
    elseif t =='category' then
     for j,y in ipairs(utempa) do
-     if y.category == b and not unit.body.components.body_part_status[j].missing then 
+     if y.category == b and not unit.body.components.body_part_status[j].missing then
       rtempa[r] = true
      else
       rtempa[r] = false
@@ -147,7 +147,7 @@ local function checkBody(unit,array)
     end
    elseif t =='flags' then
     for j,y in ipairs(utempa) do
-     if y.flags[b] and not unit.body.components.body_part_status[j].missing then 
+     if y.flags[b] and not unit.body.components.body_part_status[j].missing then
       rtempa[r] = true
      else
       rtempa[r] = false
@@ -158,7 +158,7 @@ local function checkBody(unit,array)
   elseif split(x,':')[1] == 'immune' then
    if t == 'token' then
     for j,y in ipairs(utempa) do
-     if y.token == b and not unit.body.components.body_part_status[j].missing then 
+     if y.token == b and not unit.body.components.body_part_status[j].missing then
       itempa[i] = true
      else
       itempa[i] = false
@@ -167,7 +167,7 @@ local function checkBody(unit,array)
     end
    elseif t =='category' then
     for j,y in ipairs(utempa) do
-     if y.category == b and not unit.body.components.body_part_status[j].missing then 
+     if y.category == b and not unit.body.components.body_part_status[j].missing then
       itempa[i] = true
      else
       itempa[i] = false
@@ -176,7 +176,7 @@ local function checkBody(unit,array)
     end
    elseif t =='flags' then
     for j,y in ipairs(utempa) do
-     if y.flags[b] and not unit.body.components.body_part_status[j].missing then 
+     if y.flags[b] and not unit.body.components.body_part_status[j].missing then
       rtempa[r] = true
      else
       rtempa[r] = false
@@ -216,7 +216,7 @@ local function checkCounters(unit,array)
     tables = unitTable.Counters
    else
     unitTable.Counters = {}
-	tables = unitTable.Counters
+    tables = unitTable.Counters
    end
   else
    unitTable = {}
@@ -657,7 +657,7 @@ local function checkTypes(unit,class,creature,syndrome,token,immune) -- CHECK 1
  end
  local tempa,ttempa,i,t,yes,no = {},{},1,1,false,false
  local yestext = 'Targeting failed, ' .. tostring(unit.name.first_name) .. ' is not an allowed type.'
- local notext = 'Targeting failed, ' .. tostring(unit.name.first_name) .. ' is an immune type.' 
+ local notext = 'Targeting failed, ' .. tostring(unit.name.first_name) .. ' is an immune type.'
 
  if class ~= 'NONE' then
   if type(class) ~= 'table' then class = {class} end
@@ -704,7 +704,7 @@ local function checkTypes(unit,class,creature,syndrome,token,immune) -- CHECK 1
   if type(token) ~= 'table' then token = {token} end
   for _,x in ipairs(token) do
    ttempa[t] = tokens[x]
-   t = t + 1       
+   t = t + 1
   end
  end
 
@@ -719,7 +719,7 @@ local function checkTypes(unit,class,creature,syndrome,token,immune) -- CHECK 1
   if immune then
    if x then no = true end
   else
-   if not x then 
+   if not x then
     yes = false
     break
    else

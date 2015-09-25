@@ -58,7 +58,7 @@ if args.override then
 else
  yes,upgrade = dfhack.script_environment('classes/requirements-spell').checkSpell(unit,args.spell,verbose)
 end
-if yes then 
+if yes then
  success = learnspell(unit,args.spell,upgrade,verbose)
  if success then
  -- Erase items used for reaction

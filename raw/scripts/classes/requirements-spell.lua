@@ -41,7 +41,7 @@ function checkSpell(unit,spell,verbose)
    found = true
    if currentClassLevel < tonumber(y['RequiredLevel']) then
     if verbose then print('Class requirements not met. '..currentClassName..' level '..y['RequiredLevel']..' needed. Current level is '..tostring(currentClassLevel)) end
-    yes = false    
+    yes = false
    end
     for _,i in pairs(y['RequiredPhysical']._children) do
      local x = y['RequiredPhysical'][i]
@@ -52,7 +52,7 @@ function checkSpell(unit,spell,verbose)
      end
     end
     for _,i in pairs(y['RequiredMental']._children) do
-	 local x = y['RequiredMental'][i]
+     local x = y['RequiredMental'][i]
      currentStat = getAttrValue(unit,i,true)
      if currentStat < tonumber(x) then
       if verbose then print('Stat requirements not met. '..x..' '..i..' needed. Current amount is '..tostring(currentStat)) end
@@ -60,8 +60,8 @@ function checkSpell(unit,spell,verbose)
      end
     end
     for _,i in pairs(y['ForbiddenSpell']._children) do
-     for _,syn in ipairs(df.global.world.raws.syndromes.all) do      
-	  local x = y['ForbiddenSpell'][i]
+     for _,syn in ipairs(df.global.world.raws.syndromes.all) do
+      local x = y['ForbiddenSpell'][i]
       if syn.syn_name == x then
        oldsyndrome = findUnitSyndrome(unit,syn.id)
        if oldsyndrome then
@@ -72,14 +72,14 @@ function checkSpell(unit,spell,verbose)
      end
     end
     for _,i in pairs(y['ForbiddenClass']._children) do
-	 local x = y['ForbiddenClass'][i]
+     local x = y['ForbiddenClass'][i]
      local classCheck = unitClasses[i]
      if tonumber(classCheck['Level']) >= tonumber(x) and tonumber(x) ~= 0 then
       if verbose then print('Member of a forbidden class. '..i) end
       yes = false
      elseif tonumber(x) == 0 and tonumber(classCheck['Experience']) > 0 then
       if verbose then print('Member of a forbidden class. '..i) end
-      yes = false   
+      yes = false
      end
     end
     if y['Cost'] and yes then

@@ -94,7 +94,7 @@ if args.override then
 else
  yes = dfhack.script_environment('classes/requirements-class').checkClass(unit,args.class,verbose)
 end
-if yes then 
+if yes then
  success = changeclass(unit,args.class,verbose)
  if success then
  -- Erase items used for reaction
