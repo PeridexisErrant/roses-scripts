@@ -1,0 +1,6 @@
+DFHACK_SCRIPTS(civilizations.lua SUBDIRECTORY base)
+DFHACK_SCRIPTS(classes.lua SUBDIRECTORY base)
+DFHACK_SCRIPTS(events.lua SUBDIRECTORY base)
+DFHACK_SCRIPTS(global-tracking.lua SUBDIRECTORY base)
+DFHACK_SCRIPTS(persist-delay.lua SUBDIRECTORY base)
+DFHACK_SCRIPTS(roses-init.lua SUBDIRECTORY base)

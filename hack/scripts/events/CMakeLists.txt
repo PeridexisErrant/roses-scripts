@@ -1,0 +1,1 @@
+DFHACK_SCRIPTS(trigger.lua SUBDIRECTORY events)

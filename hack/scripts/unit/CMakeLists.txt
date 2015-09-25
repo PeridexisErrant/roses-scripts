@@ -1,0 +1,7 @@
+DFHACK_SCRIPTS(attribute-change.lua SUBDIRECTORY unit)
+DFHACK_SCRIPTS(body-change.lua SUBDIRECTORY unit)
+DFHACK_SCRIPTS(boolean-change.lua SUBDIRECTORY unit)
+DFHACK_SCRIPTS(counter-change.lua SUBDIRECTORY unit)
+DFHACK_SCRIPTS(propel.lua SUBDIRECTORY unit)
+DFHACK_SCRIPTS(skill-change.lua SUBDIRECTORY unit)
+DFHACK_SCRIPTS(trait-change.lua SUBDIRECTORY unit)
