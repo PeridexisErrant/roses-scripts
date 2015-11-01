@@ -9,7 +9,7 @@ Roses' script collection is one of the biggest modding projects around.
 .. warning::
 
     The following documentation was copied from the forum thread and formatted
-    on 2015-11-01, and it's accuracy is not garunteed.
+    on 2015-11-01, and it's accuracy is not guaranteed.
 
     It is likely that these scripts will be reorganised to fit within the
     `modtools <modtools>` directory, changing the paths used to call them.
@@ -39,7 +39,7 @@ civilisations, and events.
 
 - Define civilizations based on their entity
 - Civilization level up during gameplay
-- Add/Remove creatures/items/materials/etc\ from civilizations
+- Add/Remove creatures/items/materials/etc from civilizations
   as they level up
 - Add new noble positions to civilizations as they level up
 - Completely configurable in external text file (follows format
@@ -49,7 +49,7 @@ civilisations, and events.
 
 - Trigger random events based on specified requirements
 - Events are user specified scripts, allowing for things like spawn-unit
-- Requirements are things like wealth, export, inport, deaths, etc...
+- Requirements are things like wealth, export, imports, deaths, etc...
 
 
 ==============
@@ -58,7 +58,7 @@ Useful Scripts
 Calling any of these scripts with the ``-help`` option should give
 usage information and a summary of what it does.
 
-*Some in-progess scripts are not documented here.*
+*Some in-progress scripts are not documented here.*
 :forums:`Check the forum thread. <135597.msg4928406#msg4928406>`
 
 TODO:  ensure that all of these scripts have standard locations,
@@ -143,7 +143,7 @@ it allows for some of the more interesting options that I will mention
 later.
 
 So far we haven't gained anything from using the wrapper script. Both of
-the above examples will preform exactly the same. So now let's talk
+the above examples will perform exactly the same. So now let's talk
 about what makes the wrapper script so useful. Options!
 
 You can basically split all of these options into four categories,
@@ -603,7 +603,7 @@ defined in the same way, and comes with it's own set of special tokens
   hasn't learned the specified forbidden spell
 - [SPELL_COST] - this is an advanced tag that I will touch on later, by
   default the cost of learning all spells is set to 0
-- [SPELL_UPGRADE] - instead of learning a completly new spell, you will
+- [SPELL_UPGRADE] - instead of learning a completely new spell, you will
   instead forget an old spell and learn this one in it's place (in game
   terms, you will lose the syndrome that gave you the previous spell, and
   gain the syndrome that gives you this spell, instead of keeping both)
@@ -629,7 +629,7 @@ Now we will take a look at the spells.txt file, this file will help you
 set up everything you need in game, and, along with the python routine,
 automate several steps. This file is very basic::
 
-    [SPELL:SPELL_TEST_1] <- simply label each [SPELL] as they are labeled in the classes.txt file
+    [SPELL:SPELL_TEST_1] <- simply label each [SPELL] as they are labelled in the classes.txt file
     [CDI:INTERACTION:SPELL_FIRE_FIREBALL] <- and place any interaction information you would normally have here
     [CDI:ADV_NAME:Fire Ball]
     [CDI:TARGET:C:LINE_OF_SIGHT]
@@ -742,7 +742,7 @@ Source:  :forums:`here <135597.msg5799440#msg5799440>`
 Everything talked about in this section is for NPC entities, not your fort.
 
 Have you ever thought to yourself, "Man, these goblins are just no
-challenge no that I have my full steel clad army", or "I wish the game
+challenge now that I have my full steel clad army", or "I wish the game
 could change while I play"? If so, then this is for you!
 
 The Civilization system allows you to customize the advancement of any
@@ -759,7 +759,7 @@ Types of advancement
 - Add/Remove Noble Positions (DO NOT REMOVE THEM! IT WILL CAUSE THE GAME
   TO CRASH)
 
-All of these will effect the the various stuff that an entity would bring
+All of these will effect the various stuff that an entity would bring
 for trade AND for attacks. You can even add Adamantine and other SPECIAL
 materials, so be careful!
 
@@ -770,7 +770,7 @@ advancement system.
 
 Methods of advancement
 ======================
-- Time Based (Daily/Weekly/Monthly/Seasonly/Yearly) - as a probability of
+- Time Based (Daily/Weekly/Monthly/Seasonal/Yearly) - as a probability of
   triggering at each selected timescale
 - Kill Based - triggers when they kill a certain number of your units
 - Invasion Based - triggers after they commit a certain number of
@@ -879,11 +879,11 @@ These tokens are mandatory for each civilization and should only occur once.
 - [NAME] - What the civilization is called, not currently used for
   anything. This will make an appearance in the upcoming Journal project
 - [LEVELS] - Number of levels that your civilization has
-- [LEVEL_METHOD] - The method for leveling that the civilization starts
+- [LEVEL_METHOD] - The method for levelling that the civilization starts
   with. Valid entries include:
 
     - DAILY/WEEKLY/MONTHLY/SEASON/YEARLY - The number then specifies the
-      probability for it to occur at each timestep
+      probability for it to occur at each time step
     - KILLS - The number is the number of kills needed
     - INVASION - The number is the number of invasions needed
     - TRADE - The number is the number of trades needed
@@ -898,7 +898,7 @@ These are the tokens that defined each level
 - [LEVEL] - The start of the level declaration, the number specifies the
   level
 - [LEVEL_NAME] - The name of the level, currently appears in an in-game
-  announcment, "Entity 1 has X", where X is the entered text
+  announcement, "Entity 1 has X", where X is the entered text
 - [LEVEL_CHANGE_METHOD] - This allows the method of leveling to change as
   the civilization advances, valid tokens are the same as [LEVEL_METHOD]
 
@@ -1105,7 +1105,7 @@ Custom Levels
 =============
 You can custom level a civilization through a reaction/interaction/command
 line by using ``civilizations/level-up CIV_ID``.
-The counters system also allows for a much more rigorous custom leveling
+The counters system also allows for a much more rigorous custom levelling
 structure. Especially when combined with [LEVEL_CHANGE_METHOD].
 
 
@@ -1189,7 +1189,7 @@ If they are repeated, they will be overwritten.
 - [NAME] - what the event is called, not currently used for anything,
   but will be included later
 - [CHECK] - how often to check if they event should be triggered.
-  Valid entries inlude:
+  Valid entries include:
 
     - DAILY
     - WEEKLY
